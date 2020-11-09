@@ -1,0 +1,221 @@
+html {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  color: #6f6f6f;
+  background: #fff5d4; }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+h1,
+p {
+  margin: 10px; }
+
+input[type='text'] {
+  margin: 2em auto 0 auto;
+  padding: 10px 30px;
+  width: 140px;
+  border-radius: 6px;
+  color: grey;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 300;
+  border: 0 solid #e5e5e5; }
+
+input[type='button'] {
+  margin: 1em auto;
+  padding: 10px 30px;
+  width: 140px;
+  background-color: grey;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 300;
+  border: 0; }
+
+.libre {
+  width: 50px;
+  height: 50px;
+  border-right: 1px solid #048202;
+  background: #737373;
+  background: -webkit-gradient(linear, left bottom, left top, from(#737373), color-stop(84%, #d7d7d7));
+  background: -webkit-linear-gradient(bottom, #737373 0%, #d7d7d7 84%);
+  background: -o-linear-gradient(bottom, #737373 0%, #d7d7d7 84%);
+  background: linear-gradient(0deg, #737373 0%, #d7d7d7 84%);
+  background-blend-mode: darken;
+  background-color: #07d903; }
+  .libre:first-of-type {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%; }
+  .libre:last-of-type {
+    border-right: 0;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%; }
+
+.reservado {
+  background: #737373;
+  background: -webkit-gradient(linear, left bottom, left top, from(#737373), color-stop(84%, #d7d7d7));
+  background: -webkit-linear-gradient(bottom, #737373 0%, #d7d7d7 84%);
+  background: -o-linear-gradient(bottom, #737373 0%, #d7d7d7 84%);
+  background: linear-gradient(0deg, #737373 0%, #d7d7d7 84%);
+  background-blend-mode: overlay;
+  background-color: #ef910f;
+  border-right: 1px solid #d7830e; }
+
+.vendido {
+  width: 50px;
+  height: 50px;
+  border-right: 1px solid #b51a1a;
+  background: #737373;
+  background: -webkit-gradient(linear, left bottom, left top, from(#737373), color-stop(84%, #d7d7d7));
+  background: -webkit-linear-gradient(bottom, #737373 0%, #d7d7d7 84%);
+  background: -o-linear-gradient(bottom, #737373 0%, #d7d7d7 84%);
+  background: linear-gradient(0deg, #737373 0%, #d7d7d7 84%);
+  background-blend-mode: hard-light;
+  background-color: #c91d1d; }
+  .vendido:first-of-type {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%; }
+  .vendido:last-of-type {
+    border-right: 0;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%; }
+
+#termometro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  max-width: 600px;
+  margin: 4em auto;
+  border-radius: 50px;
+  -webkit-box-shadow: 0px 10px 15px 1px rgba(102, 102, 102, 0.37);
+          box-shadow: 0px 10px 15px 1px rgba(102, 102, 102, 0.37);
+  position: relative; }
+  #termometro #valorPorcentaje {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    width: auto;
+    height: 100px;
+    /* dato clave a cambiar */
+    left: -10px;
+    /* dato clave a cambiar */
+    margin: unset;
+    font-size: 2em;
+    text-align: center;
+    text-shadow: 2px 2px 3px white, -2px -2px 3px white;
+    text-shadow: 1px 1px 7px #fff;
+    background: -webkit-radial-gradient(circle, #f5fff7d1 10%, rgba(255, 255, 255, 0) 60%);
+    background: -o-radial-gradient(circle, #f5fff7d1 10%, rgba(255, 255, 255, 0) 60%);
+    background: radial-gradient(circle, #f5fff7d1 10%, rgba(255, 255, 255, 0) 60%);
+    font-weight: 300; }
+    #termometro #valorPorcentaje span {
+      font-size: .6em; }
+    #termometro #valorPorcentaje::before {
+      content: "|";
+      position: absolute;
+      top: -20px; }
+    #termometro #valorPorcentaje::after {
+      content: "|";
+      position: absolute;
+      bottom: -16px; }
+
+#porcentaje {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  #porcentaje .term-porcentajes {
+    width: 40px;
+    height: 40px; }
+    #porcentaje .term-porcentajes p {
+      text-align: center;
+      font-size: 1.4em;
+      margin-top: 1em; }
+      #porcentaje .term-porcentajes p span {
+        font-size: .7em; }
+
+#leyenda {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 4em auto; }
+  #leyenda .cont-leyendas {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 1em;
+    margin-right: 1em; }
+    #leyenda .cont-leyendas .term-circulo {
+      border-radius: 50%;
+      width: 20px;
+      height: 20px; }
+      #leyenda .cont-leyendas .term-circulo#circ-vendido {
+        background-color: #c91d1d; }
+      #leyenda .cont-leyendas .term-circulo#circ-reservado {
+        background-color: #ef910f; }
+      #leyenda .cont-leyendas .term-circulo#circ-libre {
+        background-color: #07d903; }
+
+#panelControl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2em 0; }

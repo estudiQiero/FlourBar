@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>New page</title>
+		<link href="style.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:700,300&display=swap">
+	</head>
+	<body>
+		<section>
+			<div id="termometro">
+				<p id="valorPorcentaje">0</p>
+				<div class="libre"></div>
+				<div class="libre"></div>
+				<div class="libre"></div>
+				<div class="libre"></div>
+				<div class="libre"></div>
+				<div class="libre"></div>
+				<div class="libre"></div>
+				<div class="libre"></div>
+				<div class="libre"></div>
+				<div class="libre"></div>
+				<div class="libre"></div>
+				<div class="libre"></div>
+				<div class="libre"></div>
+			</div>
+			<!-- <div class="term-contenedor" id="porcentaje">
+				<div class="term-porcentajes">
+					<p>0<span>%</span></p>
+				</div>
+				<div class="term-porcentajes">
+					<p>50<span>%</span></p>
+				</div>
+				<div class="term-porcentajes">
+					<p>100<span>%</span></p>
+				</div>
+			</div> -->
+			<div id="leyenda">
+				<div class="cont-leyendas" id="vendido">
+					<div class="term-circulo" id="circ-vendido"></div>
+					<p>Pisos vendidos</p>
+				</div>
+				<div class="cont-leyendas" id="reservado">
+					<div class="term-circulo" id="circ-reservado"></div>
+					<p>Pisos reservados</p>
+				</div>
+				<div class="cont-leyendas" id="libre">
+					<div class="term-circulo" id="circ-libre"></div>
+					<p>Pisos libres</p>
+				</div>
+			</div>
+		</section>
+		<section id="panelControl" style="border-top: 1px solid #bbbbbb; border-bottom: 1px solid #bbbbbb;">
+			<h1>Pisos Vendidos</h1>
+			<p>Introduce el número de pisos vendidos de 1 al 13</p>
+			<input type="text" id="pisosVendidos">
+			<input type="button" onclick="barraProgreso()" value="OK">
+		</section>
+		<script src="js/barra.js" language="javascript" type="text/javascript"></script>
+	</body>
+</html>

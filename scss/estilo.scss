@@ -1,0 +1,239 @@
+// Colores
+$blanco: #fff;
+$negro: #000;
+$libre: #07d903;
+$reservado: rgb(239, 145, 15);
+$vendido: rgb(201, 29, 29);
+
+// Variaciones de color
+// oscuros
+@function oscuro($color, $porcentaje) {
+    @return mix($negro, $color, $porcentaje);
+}
+
+// claros
+@function claro($color, $porcentaje) {
+    @return mix($blanco, $color, $porcentaje);
+}
+
+// Mixins
+@mixin degrad ($blend, $color) {
+    background: rgb(115, 115, 115);
+    background: linear-gradient(0deg, rgba(115, 115, 115, 1) 0%, rgba(215, 215, 215, 1) 84%);
+    background-blend-mode: $blend;
+
+    // multiply, screen, overlay, darken, lighten, color-dodge, color-burn, hard-light, soft-light, difference, exclusion, hue, saturation, color, and luminosity
+    background-color: $color;
+}
+
+@mixin boton () {
+    input[type='checkbox'],
+    input[type='radio'] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+}
+
+// Genericos
+html {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: #6f6f6f;
+    background: rgb(255, 245, 212);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+p {
+    margin: 10px;
+}
+
+input[type='text'] {
+    margin: 2em auto 0 auto;
+    padding: 10px 30px;
+    width: 140px;
+    border-radius: 6px;
+    color: grey;
+    text-align: center;
+    font-size: 1em;
+    font-weight: 300;
+    border: 0 solid #e5e5e5;
+}
+
+input[type='button'] {
+    margin: 1em auto;
+    padding: 10px 30px;
+    width: 140px;
+    background-color: grey;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 300;
+    border: 0;
+}
+
+// código SASS
+.libre {
+    width: 50px;
+    height: 50px;
+    border-right: 1px solid oscuro($libre, 40%);
+
+    @include degrad (darken, $libre);
+
+    &:first-of-type {
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+    }
+
+    &:last-of-type {
+        border-right: 0;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+    }
+}
+
+.reservado {
+    @include degrad (overlay, $reservado);
+
+    border-right: 1px solid oscuro($reservado, 10%);
+}
+
+.vendido {
+    width: 50px;
+    height: 50px;
+
+    border-right: 1px solid oscuro($vendido, 10%);
+
+    @include degrad (hard-light, $vendido);
+
+    &:first-of-type {
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+    }
+
+    &:last-of-type {
+        border-right: 0;
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+    }
+}
+
+#termometro {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    max-width: 600px;
+    margin: 4em auto;
+    border-radius: 50px;
+    box-shadow: 0px 10px 15px 1px rgba(102, 102, 102, 0.37);
+    position: relative;
+
+    // Dato a cambiar para porcentaje
+    #valorPorcentaje {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: auto;
+        height: 100px;
+
+        /* dato clave a cambiar */
+        left: -10px;
+
+        /* dato clave a cambiar */
+        margin: unset;
+        font-size: 2em;
+        text-align: center;
+        text-shadow: 2px 2px 3px rgba(255, 255, 255, 70%), -2px -2px 3px rgba(255, 255, 255, 70%);
+        text-shadow: 1px 1px 7px $blanco;
+        background: radial-gradient(circle, #f5fff7d1 10%, rgba(255, 255, 255, 0) 60%);
+        font-weight: 300;
+
+        span {
+            font-size: .6em;
+        }
+
+        &::before {
+            content: "|";
+            position: absolute;
+            top: -20px;
+        }
+
+        &::after {
+            content: "|";
+            position: absolute;
+            bottom: -16px;
+        }
+    }
+}
+
+#porcentaje {
+    display: flex;
+    justify-content: space-between;
+
+    .term-porcentajes {
+        width: 40px;
+        height: 40px;
+
+        p {
+            text-align: center;
+            font-size: 1.4em;
+            margin-top: 1em;
+
+            span {
+                font-size: .7em;
+            }
+        }
+    }
+}
+
+#leyenda {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 4em auto;
+
+    .cont-leyendas {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 1em;
+        margin-right: 1em;
+
+        .term-circulo {
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+
+            &#circ-vendido {
+                background-color: $vendido;
+            }
+
+            &#circ-reservado {
+                background-color: $reservado;
+            }
+
+            &#circ-libre {
+                background-color: $libre;
+            }
+        }
+    }
+}
+
+#panelControl {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 0;
+}
