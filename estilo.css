@@ -1,0 +1,321 @@
+html {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  color: #6f6f6f;
+  background: #fff5d4;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 1.5em 0 0;
+  text-align: center;
+  font-size: 1.6em;
+}
+
+h2 {
+  margin: 1.5em 0 0;
+  text-align: center;
+  font-size: 1em;
+}
+
+p {
+  margin: .5em 0;
+  text-align: center;
+  font-size: 1em;
+}
+
+input[type='text'] {
+  margin: 1em auto 0 auto;
+  padding: 10px 30px;
+  width: 140px;
+  border-radius: 6px;
+  color: grey;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 300;
+  border: 0 solid #e5e5e5;
+}
+
+input[type='button'] {
+  margin: 0 auto 2em auto;
+  padding: 10px 30px;
+  width: 140px;
+  background-color: grey;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 300;
+  border: 0;
+}
+
+#botonReset {
+  background-color: #c91d1d;
+  margin: 1em auto;
+  background-image: url(/images/calavera.svg);
+  background-repeat: no-repeat;
+  background-position: 20px 9px;
+  cursor: pointer;
+  height: 40px;
+  vertical-align: middle;
+  background-size: 18px;
+  padding-left: 42px;
+}
+
+main {
+  padding: 1em;
+}
+
+#cabecera {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#cabecera #logo {
+  width: 100px;
+}
+
+#cabecera #opciones {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 10px;
+  position: relative;
+}
+
+#cabecera #opciones #cerrarOpciones {
+  display: none;
+}
+
+#cabecera #opciones svg {
+  width: 22px;
+  height: 22px;
+  transition: .25s all ease-in-out;
+  margin-bottom: 10px;
+}
+
+#cabecera #opciones svg:hover {
+  transform: scale(1.1);
+}
+
+#cabecera #opciones svg path {
+  fill: #706f6f;
+}
+
+#cabecera #opciones #panel-opciones {
+  display: none;
+  position: absolute;
+  top: 50px;
+  z-index: 100;
+}
+
+#cabecera #opciones #panel-opciones #panel-pisos,
+#cabecera #opciones #panel-opciones #panel-reset {
+  background-color: #ecdfb6e6;
+  width: 300px;
+  border: 2px solid #fff5d4;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  padding-bottom: .7rem;
+  box-shadow: 0 8px 12px rgba(128, 128, 128, 0.425);
+}
+
+#cabecera #opciones #panel-opciones #panel-reservar-pisos {
+  border-top: 2px #fff5d4 solid;
+}
+
+#cabecera #opciones #panel-opciones .flex-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+#cabecera #opciones #panel-opciones .flex-vertical #boton-reserva {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#cabecera #opciones #panel-opciones .flex-vertical #boton-reserva p {
+  margin: 0 1em;
+}
+
+#cabecera #opciones #panel-opciones .flex-vertical #boton-reserva #interruptorReservas {
+  margin: 1.4em 0;
+  border-radius: 100px;
+  height: 30px;
+  width: 60px;
+  background-color: #cabd91;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#cabecera #opciones #panel-opciones .flex-vertical #boton-reserva #interruptorReservas #interruptorOnOff {
+  background-color: #fff5d4;
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  box-shadow: 0 3px 5px rgba(128, 128, 128, 0.425);
+}
+
+#termometro {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  min-width: 300px;
+  width: 100%;
+  height: 50px;
+  max-width: 600px;
+  margin: 8em auto 4em;
+  border-radius: 50px;
+  box-shadow: 0px 10px 15px 1px rgba(102, 102, 102, 0.37);
+  position: relative;
+}
+
+#termometro #valorPorcentaje {
+  position: absolute;
+  width: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  /* dato clave a cambiar */
+  left: 0%;
+  /* dato clave a cambiar */
+  margin: unset;
+  font-size: 2em;
+  text-align: center;
+  text-shadow: -2px -2px 5px #fff, 0px 0px 8px #fff, 2px 2px 5px #fff, 4px 0px 8px #fff, -4px 0px 8px #fff, 0px 4px 8px #fff, 0px -4px 8px #fff;
+  font-weight: 300;
+}
+
+#termometro #valorPorcentaje span {
+  font-size: .6em;
+}
+
+#termometro #valorPorcentaje::before {
+  content: "|";
+  position: absolute;
+  top: -20px;
+}
+
+#termometro #valorPorcentaje::after {
+  content: "|";
+  position: absolute;
+  bottom: -16px;
+}
+
+#termometro .libre {
+  height: 50px;
+  flex-grow: 1;
+  border-right: 1px solid #048202;
+  background: #737373;
+  background: linear-gradient(0deg, #737373 0%, #d7d7d7 84%);
+  background-blend-mode: darken;
+  background-color: #07d903;
+}
+
+#termometro .libre:first-of-type {
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+
+#termometro .libre:last-of-type {
+  border-right: 0;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+#termometro .reservado {
+  background: #737373;
+  background: linear-gradient(0deg, #737373 0%, #d7d7d7 84%);
+  background-blend-mode: overlay;
+  background-color: #ef910f;
+  border-right: 1px solid #d7830e;
+}
+
+#termometro .vendido {
+  height: 50px;
+  flex-grow: 1;
+  border-right: 1px solid #b51a1a;
+  background: #737373;
+  background: linear-gradient(0deg, #737373 0%, #d7d7d7 84%);
+  background-blend-mode: hard-light;
+  background-color: #c91d1d;
+}
+
+#termometro .vendido:first-of-type {
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+
+#termometro .vendido:last-of-type {
+  border-right: 0;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+#leyenda {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 4em auto;
+}
+
+#leyenda #reservado {
+  display: none;
+}
+
+#leyenda .cont-leyendas {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+#leyenda .cont-leyendas .term-circulo {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+#leyenda .cont-leyendas .term-circulo#circ-vendido {
+  background-color: #c91d1d;
+}
+
+#leyenda .cont-leyendas .term-circulo#circ-reservado {
+  background-color: #ef910f;
+}
+
+#leyenda .cont-leyendas .term-circulo#circ-libre {
+  background-color: #07d903;
+}
+
+#panelControl {
+  display: none;
+  height: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 0;
+  border: 1px rgba(128, 128, 128, 0.269) solid;
+  border-radius: 5px;
+}
+
+#panelControl #pisosVendidos {
+  margin-bottom: 1em;
+}
+
+#panelControl #info {
+  display: none;
+}
