@@ -103,13 +103,13 @@
 			</div>
 			<!-- PopUp Opciones -->
 			<div id="opciones">
-				<div id="cerrarOpciones" onclick="ocultarOpciones()">
+				<div id="cerrarOpciones" onclick="ocultarPanelControl()">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.65 19.65">
 						<path
 							d="M19.27,14.66,14.43,9.82,19.27,5a1.32,1.32,0,0,0,0-1.84L16.5.38a1.3,1.3,0,0,0-1.84,0L9.82,5.22,5,.38a1.31,1.31,0,0,0-1.85,0L.38,3.14A1.31,1.31,0,0,0,.38,5L5.22,9.82.38,14.66a1.3,1.3,0,0,0,0,1.84l2.76,2.77a1.33,1.33,0,0,0,1.85,0l4.83-4.84,4.84,4.84a1.32,1.32,0,0,0,1.84,0l2.77-2.77A1.32,1.32,0,0,0,19.27,14.66Z" />
 					</svg>
 				</div>
-				<div id="cerrarEngranaje" onclick="mostrarOpciones()">
+				<div id="cerrarEngranaje" onclick="mostrarPanelControl()">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40.01">
 						<path class="cls-1"
 							d="M38.85,17.28H36.12a1.63,1.63,0,0,1-1.48-1.1l-1.58-3.83a1.63,1.63,0,0,1,.27-1.82L35.26,8.6a1.15,1.15,0,0,0,0-1.63L33,4.75a1.15,1.15,0,0,0-1.63,0L29.48,6.68a1.63,1.63,0,0,1-1.83.26L23.83,5.37a1.65,1.65,0,0,1-1.11-1.48V1.15A1.15,1.15,0,0,0,21.57,0H18.43a1.16,1.16,0,0,0-1.15,1.15V3.89a1.65,1.65,0,0,1-1.1,1.48L12.35,6.94a1.61,1.61,0,0,1-1.82-.26L8.6,4.75A1.15,1.15,0,0,0,7,4.75L4.75,7a1.15,1.15,0,0,0,0,1.63l1.93,1.93a1.63,1.63,0,0,1,.26,1.82L5.36,16.18a1.62,1.62,0,0,1-1.47,1.1H1.15A1.16,1.16,0,0,0,0,18.43v3.14a1.16,1.16,0,0,0,1.15,1.16H3.89a1.62,1.62,0,0,1,1.47,1.1l1.58,3.82a1.64,1.64,0,0,1-.26,1.83L4.75,31.41a1.15,1.15,0,0,0,0,1.63L7,35.26a1.15,1.15,0,0,0,1.63,0l1.93-1.93a1.63,1.63,0,0,1,1.82-.27l3.83,1.58a1.64,1.64,0,0,1,1.1,1.48v2.73A1.16,1.16,0,0,0,18.43,40h3.14a1.15,1.15,0,0,0,1.15-1.16V36.12a1.64,1.64,0,0,1,1.11-1.48l3.82-1.58a1.65,1.65,0,0,1,1.83.27l1.93,1.93a1.15,1.15,0,0,0,1.63,0L35.26,33a1.15,1.15,0,0,0,0-1.63l-1.94-1.93a1.66,1.66,0,0,1-.26-1.83l1.58-3.82a1.63,1.63,0,0,1,1.48-1.1h2.73A1.15,1.15,0,0,0,40,21.57V18.43A1.15,1.15,0,0,0,38.85,17.28ZM20,25a5,5,0,1,1,5-5A5,5,0,0,1,20,25Z" />
@@ -121,8 +121,8 @@
 						<div class="flex-vertical">
 							<h2>Número de pisos</h2>
 							<p>Introduce el número total<br>de pisos de la promoción</p>
-							<input type="text" id="pisosTotales"><br>
-							<input type="button" onclick="pisosTotales()" value="OK">
+							<input type="number" id="pisosTotales"><br>
+							<input type="button" onclick="pisosTotales()" onkeypress="pisosTotales(event)" value="OK">
 						</div>
 						<!-- Reservar pisos -->
 						<div id="panel-reservar-pisos" class="flex-vertical">
@@ -158,14 +158,17 @@
 				<div class="cont-leyendas" id="vendido">
 					<div class="term-circulo" id="circ-vendido"></div>
 					<p>Pisos vendidos</p>
+					<p id="numPisosVendidos" class="cifrasVentas"> </p>
 				</div>
 				<div class="cont-leyendas" id="reservado">
 					<div class="term-circulo" id="circ-reservado"></div>
 					<p>Pisos reservados</p>
+					<p id="numPisosReservados" class="cifrasVentas"> </p>
 				</div>
 				<div class="cont-leyendas" id="libre">
 					<div class="term-circulo" id="circ-libre"></div>
 					<p>Pisos libres</p>
+					<p id="numPisosLibres" class="cifrasVentas"> </p>
 				</div>
 			</div>
 		</section>
@@ -173,7 +176,7 @@
 		<section id="panelControl">
 			<h1>Pisos Vendidos</h1>
 			<p>Introduce el número de pisos vendidos de 1 a <span id="varPisosTotales">1</span></p>
-			<input type="text" id="pisosVendidos">
+			<input type="number" id="pisosVendidos">
 			<input type="button" onclick="barraProgreso()" value="OK">
 			<div id="info">
 				<p>Para empezar, debes introducir el número de pisos en el campo que aparece haciendo clic en el engranaje, arriba a la derecha.</p>

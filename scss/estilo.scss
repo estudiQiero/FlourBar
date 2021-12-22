@@ -68,7 +68,7 @@ p {
     font-size: 1em;
 }
 
-input[type='text'] {
+input[type='number'] {
     margin: 1em auto 0 auto;
     padding: 10px 30px;
     width: 140px;
@@ -109,6 +109,8 @@ input[type='button'] {
 
 main {
     padding: 1em;
+    // max-width: 960px;
+    margin: auto;
 }
 
 // Seccion opciones
@@ -130,6 +132,11 @@ main {
 
         #cerrarOpciones {
             display: none;
+            cursor: pointer;
+        }
+
+        #cerrarEngranaje {
+            cursor: pointer;
         }
 
         svg {
@@ -339,18 +346,26 @@ main {
                 background-color: $libre;
             }
         }
+        .cifrasVentas {
+            margin-top: 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
     }
 }
 
 #panelControl {
     display: none;
     height: auto;
+    margin: auto;
+    max-width: 800px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2em 0;
-    border: 1px rgba(128, 128, 128, 0.269) solid;
-    border-radius: 5px;
+    background-color: #f9efcd;
+    // border: 1px rgba(128, 128, 128, 0.269) solid;
+    border-radius: 8px;
 
     #pisosVendidos {
         margin-bottom: 1em;
